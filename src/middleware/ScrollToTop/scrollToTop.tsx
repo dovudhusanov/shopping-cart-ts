@@ -5,7 +5,7 @@ function ScrollToTop() {
     const [isVisible, setIsVisible] = useState(false);
 
     const toggleVisibility = () => {
-        if (window.pageYOffset > 400) {
+        if (window.pageYOffset > 300) {
             setIsVisible(true);
         } else {
             setIsVisible(false);

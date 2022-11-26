@@ -1,0 +1,114 @@
+.products-ads{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 125px;
+}
+
+.products-ads img{
+    max-width: 100%;
+    display: block;
+}
+
+.products__ads-left{
+    margin-right: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.products__ads-left h1{
+    font-size: 22px;
+    padding: 13px 25px 17px 25px;
+    font-weight: 600;
+}
+
+.products__ads-left h1 span{
+    font-size: 12px;
+    color: #121212;
+    opacity: 40%;
+    font-weight: 400;
+    position: relative;
+    top: -5px;
+}
+
+.products__ads-w-m div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.products__ads-w-m{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.product__ad-w{
+    margin-right: 10px;
+}
+
+.products__ads-a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.products__ads-title{
+    color: #121212;
+    background: #ffffff;
+    padding: 18px 25px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    position: absolute;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+}
+
+.header-services{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 880px) {
+
+    .products-ads{
+        flex-direction: column;
+    }
+
+    .products__ads-a{
+        position: relative;
+        top: -8px;
+    }
+
+    .products__ads-left{
+        margin: 0 0 20px 0;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .products__ads-title{
+        padding: 15px 20px;
+        font-size: 12px;
+    }
+
+    .products__ads-left h1{
+        font-size: 18px;
+        padding: 11px 23px 15px 23px;
+    }
+
+    .products__ads-left h1 span {
+        font-size: 10px;
+    }
+}
+

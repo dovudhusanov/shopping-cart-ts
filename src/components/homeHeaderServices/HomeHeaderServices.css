@@ -1,0 +1,38 @@
+.header__services-box{
+    max-width: 300px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.header__services-box i{
+    font-size: 25px;
+    position: relative;
+    top: -5px;
+}
+
+.header__service-info{
+    padding-left: 10px;
+}
+
+.header__service-info h4{
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    color: #121212;
+}
+
+.header__service-info p{
+    font-size: 12px;
+    font-weight: 500;
+    color: #121212;
+    padding: 5px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .header__services-box{
+        flex-direction: column;
+        text-align: center;
+    }
+}
