@@ -1,0 +1,26 @@
+.navbar-top{
+    width: 100%;
+    background: #121212;
+    height: 23px;
+}
+
+.navbar__top-contact span{
+    color: #ffffff;
+    font-size: 11px;
+}
+
+.navbar__top-contact span i{
+    padding-right: 5px;
+}
+
+.navbar__top-social-net i{
+    color: #ffffff;
+    font-size: 11px;
+    padding-right: 10px;
+}
+
+.nav-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
