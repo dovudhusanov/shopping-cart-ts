@@ -3,6 +3,8 @@ import "./home.css"
 import changeTitle from "../../middleware/changeTitle";
 import {ScrollTop} from "../../middleware/scrollTop";
 import HomeHeaderServices from "../../components/homeHeaderServices/HomeHeaderServices";
+import {sortedData} from "../../data/data";
+import WomenCategory from "../../components/womenCategory/womenCategory";
 
 function Home() {
 
@@ -68,6 +70,7 @@ function Home() {
                         descr="Contact us 24 hours a day, 7 days a week"
                     />
                 </div>
+                <WomenCategory />
             </div>
         </>
     );
