@@ -1,0 +1,253 @@
+.footer {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.footer-top-bar {
+    background: #121212;
+    padding: 20px 0;
+}
+
+.footer-bar-items {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bar-items h1 {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+}
+
+.footer-top-contact {
+    position: relative;
+    left: -30px;
+}
+
+.footer-top-contact input {
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 0 10px 20px;
+    background: #414141;
+    width: 400px;
+    margin-right: 10px;
+}
+
+.footer-top-contact input::placeholder {
+    color: #8D8D8D;
+}
+
+.footer-top-contact button {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .6px;
+    opacity: 90%;
+    padding: 8px 20px;
+    background: transparent;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.footer-top-contact button:hover {
+    background: #ffffff;
+    color: #121212;
+    cursor: pointer;
+}
+
+.footer-social-links i {
+    color: #ffffff;
+    padding-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.footer-useful-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+    background: #ffffff;
+    flex-wrap: wrap;
+}
+
+.footer-useful-links ul {
+    line-height: 35px;
+    margin: 20px 15px;
+}
+
+.footer-useful-links ul li:nth-child(1) {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+}
+
+.footer-useful-links ul li a {
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 80%;
+    color: #121212;
+    position: relative;
+    padding-bottom: 5px;
+    transition: 0.3s ease;
+}
+
+.footer-useful-links ul li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #121212;
+    width: 0;
+    height: 2px;
+    transition: 0.5s ease;
+}
+
+.footer-useful-links ul li a:hover::before {
+    width: 100%
+}
+
+.footer-bottom{
+    background: #F8F8F8;
+    padding: 10px 0;
+}
+
+.footer-copyright img{
+    width: 50px;
+}
+
+.footer-copyright{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright{
+    font-size: 11px;
+    font-weight: 500;
+    color: #121212;
+    opacity: 80%;
+}
+
+.author-copyright{
+    display: flex;
+    align-items: center;
+}
+
+.copyright2{
+    display: none;
+    font-size: 11px;
+    font-weight: 500;
+    color: #121212;
+    opacity: 80%;
+}
+
+.payment-method{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-method img{
+    padding: 0 5px;
+    filter: grayscale(100%);
+    opacity: .8;
+    transition: 0.3s ease;
+}
+
+.payment-method img:hover{
+    opacity: 1;
+    filter: grayscale(0);
+}
+
+.author{
+    color: #121212;
+    font-weight: 500;
+    opacity: 80%;
+    text-decoration: underline;
+    font-size: 11px;
+}
+
+.author span{
+    font-weight: 700;
+    color: #121212;
+}
+@media screen and (max-width: 940px) {
+    .footer-top-contact input {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer-top-contact {
+        left: 0;
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .copyright{
+        display: none;
+    }
+
+    .copyright2{
+        display: block;
+        padding-left: 15px;
+    }
+
+    .author-copyright{
+        margin-top: 20px;
+    }
+
+    .author{
+    }
+
+    .footer-copyright{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .footer-bar-items h1 {
+        display: none;
+    }
+
+    .footer-top-contact {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .footer-bar-items {
+        flex-direction: column;
+    }
+
+    .footer-social-links {
+        margin-top: 15px;
+        width: 80%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .payment-method img{
+        width: 40px;
+    }
+
+    .copyright2{
+        font-size: 9px;
+    }
+
+    .author{
+        font-size: 9px;
+    }
+}

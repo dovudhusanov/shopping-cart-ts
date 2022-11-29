@@ -1,0 +1,102 @@
+.blog-cards-main .container{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.blog-cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.title-and-show{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-and-show h1{
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+}
+
+.title-and-show button{
+    border: none;
+    background: transparent;
+    color: #121212;
+    opacity: 60%;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.title-and-show button:hover{
+    opacity: 1;
+}
+
+.blog-card{
+    max-width: 300px;
+    margin: 0px 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blog-card img{
+    max-width: 100%;
+    display: block;
+}
+
+.blog-card-info{
+    background: #ffffff;
+    max-width: 270px;
+    position: relative;
+    top: -50px;
+    padding: 22px 15px;
+    /*border: 1px solid rgba(128, 128, 128, 0.21);*/
+}
+
+.blog-card-info h3{
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    line-height: 22px;
+}
+
+.blog-card-info p {
+    font-size: 13px;
+    font-weight: 400;
+    opacity: 80%;
+    line-height: 21px;
+    padding-top: 10px;
+}
+
+@media screen and (max-width: 959px) {
+    .blog-cards{
+        justify-content: space-evenly;
+    }
+    .title-and-show{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .title-and-show{
+        width: 100%
+    }
+}

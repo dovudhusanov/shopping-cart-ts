@@ -29,3 +29,13 @@
 .opacity-0{
     opacity: 0;
 }
+
+@media screen and (max-width: 375px) {
+    .scroll__top-top-parent{
+        bottom: 20px;
+    }
+    .scrollToTopBTn{
+        font-size: 15px;
+        padding: 8px 10px;
+    }
+}

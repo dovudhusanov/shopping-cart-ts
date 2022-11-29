@@ -329,7 +329,7 @@ let data: IProduct[] = [
         "price": 20.99,
         "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
         "category": "women",
-        "image": "./images/productImage/womenProductImage/img_7.png",
+        "image": "./images/productImage/womenProductImage/img_2.png",
         "rating": {
             "rate": 3.6,
             "count": 145
@@ -352,7 +352,7 @@ let data: IProduct[] = [
         "price": 40.12,
         "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
         "category": "women",
-        "image": "./images/productImage/womenProductImage/subs-girl.png",
+        "image": "./images/productImage/womenProductImage/img.png",
         "rating": {
             "rate": 3.6,
             "count": 145
@@ -364,7 +364,7 @@ let data: IProduct[] = [
         "price": 99.99,
         "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
         "category": "man",
-        "image": "./images/productImage/menProductImage/img_7.png",
+        "image": "./images/productImage/menProductImage/img_2.png",
         "rating": {
             "rate": 2.1,
             "count": 430
@@ -454,7 +454,7 @@ let data: IProduct[] = [
         "price": 20.99,
         "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
         "category": "man",
-        "image": "./images/productImage/menProductImage/subs-girl.png",
+        "image": "./images/productImage/menProductImage/img.png",
         "rating": {
             "rate": 2.1,
             "count": 430
@@ -496,7 +496,7 @@ export const sortedWomenCategories = sortedData.filter((product: IProduct) => pr
         ...data,
         category: womenCategories[idx]
     }
-}); 
+});
 
 
 export const menProducts = sortedData.filter((product: IProduct) => product.category.includes("man")).map((data: IProduct) => {
@@ -506,3 +506,44 @@ export const menProducts = sortedData.filter((product: IProduct) => product.cate
         category: womenCategories[idx]
     }
 });
+
+export let blogData: blogData[] = [
+    {
+        id: 1,
+        image: "./images/blogImages/img.png",
+        title: "The Easiest Way to Break",
+        descr: "But I must explain to you how all this mistaken idea of denouncing pleas and praising pain was bor"
+    }, {
+        id: 2,
+        image: "./images/blogImages/img_1.png",
+        title: "Wedding Season",
+        descr: "But I must explain to you how all this mistaken idea of denouncing pleas and praising pain was bor"
+    }, {
+        id: 3,
+        image: "./images/blogImages/img_2.png",
+        title: "Recent Favorites On Repeat",
+        descr: "But I must explain to you how all this mistaken idea of denouncing pleas and praising pain was bor"
+    }, {
+        id: 4,
+        image: "./images/blogImages/img_1.png",
+        title: "The Easiest Way to Break",
+        descr: "But I must explain to you how all this mistaken idea of denouncing pleas and praising pain was bor"
+    }, {
+        id: 5,
+        image: "./images/blogImages/img.png",
+        title: "Recent Favorites On Repeat",
+        descr: "But I must explain to you how all this mistaken idea of denouncing pleas and praising pain was bor"
+    }, {
+        id: 6,
+        image: "./images/blogImages/img_2.png",
+        title: "Wedding Season",
+        descr: "But I must explain to you how all this mistaken idea of denouncing pleas and praising pain was bor"
+    }
+]
+
+interface blogData {
+    id: number
+    image: string
+    title: string
+    descr: string
+}

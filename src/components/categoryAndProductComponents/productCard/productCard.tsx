@@ -17,7 +17,7 @@ function ProductCard({title, category, product}: IProps) {
 
     const clickBtn = () => {
         setShowAll(prevState => !prevState)
-        showAll ? setEndIdx(sortedData.length - 1) : setEndIdx(8)
+        showAll ? setEndIdx(sortedData.length) : setEndIdx(8)
     }
 
     const filterProduct = (category: string, index: number) => {
