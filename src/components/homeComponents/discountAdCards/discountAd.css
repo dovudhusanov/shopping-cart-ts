@@ -1,0 +1,73 @@
+.discount__ad-cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 96px;
+}
+
+.discount__ad-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 5px;
+}
+
+.discount-card-info {
+    position: absolute;
+    background: #ffffff;
+    padding: 15px 25px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.discount__ad-card img {
+    max-width: 100%;
+    display: block;
+}
+
+.discount-card-info p {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    opacity: 60%;
+}
+
+.discount-card-info h2 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    padding-top: 8px;
+}
+
+.discount-card-info h2 span {
+    color: #E91E63;
+}
+
+@media screen and (max-width: 767px) {
+    .discount__ad-cards {
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .discount__ad-cards {
+        margin-top: 60px;
+    }
+
+    .discount-card-info {
+        padding: 15px 20px;
+    }
+
+    .discount-card-info p {
+        font-size: 9px;
+    }
+
+    .discount-card-info h2 {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,138 @@
+.subscribe__component {
+    width: 100%;
+    background: linear-gradient(180deg, #F3F2F2 0%, #DCDBDB 100%);
+    min-height: 600px;
+    margin-top: 96px;
+}
+
+.subscribe__component-in {
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.sub-images {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: absolute;
+}
+
+.sub-images img {
+    position: relative;
+    bottom: 0;
+    max-width: 100%;
+    display: block;
+}
+
+.subs-girl {
+    bottom: -39px !important;
+    width: 320px;
+    z-index: 1000;
+    left: -130px;
+}
+
+.subs-man {
+    width: 234px !important;
+    height: 540px;
+    bottom: -50px !important;
+    z-index: 999;
+    right: -70px;
+}
+
+.subscribe-card {
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    width: 550px;
+    min-height: 461px;
+    z-index: 999;
+    line-height: 50px;
+}
+
+.subscribe-card div {
+    position: relative;
+    top: -20px;
+}
+
+.subscribe-card p {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    opacity: 40%;
+    color: #121212;
+}
+
+.subscribe-card h1 {
+    font-size: 26px;
+    letter-spacing: .6px;
+    font-weight: 600;
+    color: #121212;
+    line-height: 36px;
+    text-transform: uppercase;
+}
+
+.subscribe-card h1 span {
+    color: #E91E63;
+}
+
+.subscribe-card .sub-input, .sub-btn {
+    border: none;
+    outline: none;
+    background: #F8F8F8;
+    padding: 10px 20px;
+    color: rgba(18, 18, 18, 0.53);
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    width: 340px;
+    height: 64px;
+    margin-bottom: 10px;
+}
+
+.subscribe-card .sub-btn {
+    color: #ffffff !important;
+    background: #121212 !important;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+    letter-spacing: .6px;
+    transition: 0.3s ease;
+}
+
+.subscribe-card .sub-btn:hover {
+    background: #252525 !important;
+}
+
+@media screen and (max-width: 860px) {
+    .sub-images {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .subscribe-card{
+        min-height: 400px;
+    }
+    .subscribe-card p {
+        font-size: 10px;
+    }
+
+    .subscribe-card h1 {
+        font-size: 20px;
+    }
+
+    .subscribe-card .sub-input, .sub-btn {
+        font-size: 12px;
+        width: 80%;
+        height: 50px;
+    }
+}

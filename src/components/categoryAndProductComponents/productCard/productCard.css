@@ -28,13 +28,21 @@
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: .6px;
-    opacity: 60%;
+    opacity: 40%;
     color: #121212;
     cursor: pointer;
     transition: 0.3s ease;
 }
 
-.product-menu-tabs li:hover{
+/*Dont change this styles*/
+.product-menu-tabs li.active-list {
+    opacity: 1;
+    font-weight: 600;
+}
+
+/*Never change this styles*/
+
+.product-menu-tabs li:hover {
     opacity: 1;
     font-weight: 500;
 }
@@ -54,6 +62,7 @@
 
 .product-card img {
     width: 250px;
+    height: 317px;
 }
 
 .product-card h3 {
@@ -65,13 +74,38 @@
     line-height: 30px;
 }
 
-.product-price span{
+.product-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stars {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stars i:nth-child(1),
+.stars i:nth-child(2),
+.stars i:nth-child(3),
+.stars i:nth-child(4) {
+    color: #F0CC84;
+}
+
+.stars i {
+    font-size: 12px;
+    padding-left: 3px;
+    color: #E6E6E6;
+}
+
+.product-price span {
     font-size: 14px;
     font-weight: 700;
     color: #121212;
 }
 
-.showProductsBtn{
+.showProductsBtn {
     color: #121212;
     font-size: 13px;
     font-weight: 500;
@@ -86,47 +120,51 @@
     transition: 0.3s ease;
 }
 
-.showProductsBtn:hover{
+.showProductsBtn:hover {
     background: #e1e1e1;
 }
 
+
 @media screen and (max-width: 839px) {
-    .product-cards{
+    .product-cards {
         justify-content: space-evenly;
     }
 }
 
 @media screen and (max-width: 1024px) {
-    .product-menu-tabs{
+    .product-menu-tabs {
         width: 70%;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .product-menu{
+    .product-menu {
         flex-direction: column;
         margin-bottom: 20px;
     }
-    .product-menu-tabs{
+
+    .product-menu-tabs {
         width: 90%;
     }
 }
 
-@media screen and (max-width: 560px){
-    .product-menu-tabs{
+@media screen and (max-width: 560px) {
+    .product-menu-tabs {
         width: 100%;
         padding: 0 10px;
     }
-    .product-menu-tabs li{
+
+    .product-menu-tabs li {
         font-size: 10px;
     }
 }
 
 @media screen and (max-width: 475px) {
-    .product-menu-tabs{
+    .product-menu-tabs {
         flex-wrap: wrap;
     }
-    .product-menu-tabs li{
+
+    .product-menu-tabs li {
         font-size: 9px;
         padding-left: 10px;
         padding-top: 9px;
