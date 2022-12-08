@@ -7,7 +7,7 @@ function FilterProductMenu({setCartLine}: any) {
     // @ts-ignore
     let {filterProduct} = useContext(Context) as Context;
     const handleChange = (size: string) => filterProduct(size)
-    const [showFilter, setShowFilter] = useState<boolean>(false)
+    const [showFilter, setShowFilter] = useState<boolean>(true)
 
     return (
         <div className="filter-product-menu">
