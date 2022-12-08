@@ -1,12 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import "./womenCategory.css"
 import ProductCard from "../productCard/productCard";
 import {sortedWomenCategories} from "../../../data/data";
+import {Context} from "../../../context/provider";
 
 function WomenCategory() {
+    // @ts-ignore
+    let {products} = useContext(Context) as Context;
     return (
         <div className="women-category">
-            <ProductCard product={sortedWomenCategories} title={"Women's"} category={"women"}/>
+            <ProductCard  singleProduct={true} product={products} title={"Women's"} category={"women"}/>
         </div>
     );
 }

@@ -3,11 +3,11 @@ import "./blogComponent.css"
 import BlogCard from "./blogCard";
 import {blogData} from "../../data/data";
 
-interface blogsTitle {
+interface blog {
     blogsTitle: string
 }
 
-function BlogComponent({blogsTitle}: blogsTitle) {
+function BlogComponent({blogsTitle}: blog) {
 
     const [startIdx, setStartIdx] = useState<number>(0)
     const [endIdx, setEndIdx] = useState<number>(3)

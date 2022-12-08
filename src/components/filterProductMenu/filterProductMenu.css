@@ -1,0 +1,201 @@
+.filter-menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 45px 0;
+}
+
+.filter-menu button {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(18, 18, 18, 0.5);
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-menu button i {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.filter-menu > div button {
+    margin: 0 10px;
+    position: relative;
+    left: 15px;
+}
+
+.filter-menu span {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(18, 18, 18, 0.5);
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-items {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #F8F8F8;
+    padding: 30px 50px;
+}
+
+.filter-items > div{
+    margin: 15px 5px;
+}
+
+.color-filter {
+    display: flex;
+    flex-direction: column;
+}
+
+.color-filter span{
+    padding-bottom: 10px;
+}
+
+.filter-menu-show {
+    display: inline-block;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 260px;
+    width: 300px;
+}
+
+.filter-menu-show::-webkit-scrollbar-track {
+    background-color: #E6E6E6;
+}
+
+.filter-menu-show::-webkit-scrollbar {
+    width: 3px;
+    background-color: #E6E6E6;
+}
+
+.filter-menu-show::-webkit-scrollbar-thumb {
+    background-color: #8D8B8B;
+}
+
+.filter-menu-show .filter-color-item-li {
+    position: relative;
+    z-index: 2;
+    left: 24px;
+    line-height: 5px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #121212;
+    opacity: 80%;
+}
+
+.filter-color-item {
+    position: relative;
+    line-height: 35px;
+    left: 22px;
+}
+
+.filter-color-item::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    left: -22px;
+    top: 28px;
+    background-color: inherit
+}
+
+.filter-color-item::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #F8F8F8;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.filter-product {
+    width: 200px;
+}
+
+.filter-show{
+    line-height: 35px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-show label{
+    margin-left: 9px;
+}
+
+.filter-show label input{
+    position: relative;
+    right: 6px;
+}
+
+.check {
+    margin-right: 1rem;
+    padding-left: 1.75rem;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.check input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    outline: none;
+}
+.check input[type=checkbox]:focus ~ span {
+    border: 2px solid #aab0b9;
+}
+.check input[type=checkbox]:focus:checked ~ span {
+    border: 2px solid #20644c;
+}
+.check input[type=checkbox]:checked ~ span {
+    color: #FFFFFF;
+    background: #329E78 url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHdpZHRoPSIxMiIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgMTIgOSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgPHBhdGggZD0iTTQuNTc1IDguOTc3cy0uNDA0LS4wMDctLjUzNi0uMTY1TC4wNTcgNS42NGwuODI5LTEuMjI3TDQuNDcgNy4yNjggMTAuOTIxLjA4NmwuOTIzIDEuMTAzLTYuODYzIDcuNjRjLS4xMzQtLjAwMy0uNDA2LjE0OC0uNDA2LjE0OHoiIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPg0KPC9zdmc+) 50% 40% no-repeat;
+    border: 2px solid #329E78;
+}
+.check span {
+    border-radius: 3px;
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 1rem;
+    height: 1rem;
+    background-color: #d4d7dc;
+    border: 2px solid #d4d7dc;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media screen and (max-width: 425px) {
+    .filter-menu-show{
+        width: 230px;
+    }
+    .filter-menu button i{
+        margin-right: 3px;
+    }
+    .filter-menu > div button{
+        margin: 0 5px;
+    }
+    .filter-menu span{
+        font-size: 12px;
+        position: relative;
+        top: 3px;
+    }
+}

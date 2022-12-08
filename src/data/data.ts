@@ -245,7 +245,7 @@ let data: IProduct[] = [
         "price": 38.12,
         "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
         "category": "women",
-        "image": "./images/productImage/womenProductImage/subs-girl.png",
+        "image": "./images/productImage/womenProductImage/img.png",
         "rating": {
             "rate": 3.6,
             "count": 145
@@ -470,6 +470,7 @@ export interface IProduct {
     "description": string,
     "category": string,
     "image": string,
+    size?:string;
     "rating": IRating
 }
 
@@ -478,13 +479,18 @@ interface IRating {
     count: number;
 }
 
+export const color = ["black", "cyan", "green", "grey", "pink", "white", "blue", "red", "yellow", "coral"]
+export const sizes = ["XS", "S", "M", "L"];
+export const brandFilter = ["Ck", "H&M", "Kalles", "Levi's", "Monki", "Nike"];
+export const priceFilter = ["1200+", "600-$1200", "300-$600", "150-$300", "50-$150", "7-$50"];
+
 export let sortedData = data.map((data: IProduct) => {
-    const sizes = ["XS", "S", "M", "L"]
     const idx = Math.floor(Math.random() * sizes.length)
+    const idxColor = Math.floor(Math.random() * color.length)
     return {
         ...data,
         size: sizes[idx],
-        color: ''
+        color: color[idxColor]
     }
 })
 

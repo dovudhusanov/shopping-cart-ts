@@ -1,0 +1,24 @@
+.women-page .product-menu{
+    display: none;
+}
+
+.product-main .product-card{
+    display: flex;
+    max-width: 500px;
+    margin: 20px;
+}
+
+.product-main .product-card img{
+    width: 160px;
+    height: 223px;
+}
+
+.product-main .cart-line-flex{
+    display: flex;
+    align-content: center;
+}
+
+.product-main .cart-line-flex > div{
+    position: relative;
+    left: 20px;
+}

@@ -124,6 +124,10 @@
     background: #e1e1e1;
 }
 
+.cart-line-flex{
+    display: inline;
+}
+
 
 @media screen and (max-width: 839px) {
     .product-cards {

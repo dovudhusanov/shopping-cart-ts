@@ -4,15 +4,18 @@ import './index.css';
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
 import ScrollToTop from "./middleware/ScrollToTop/scrollToTop";
+import {ContextProvider} from "./context/provider";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
     <React.StrictMode>
-        <BrowserRouter>
-            <App/>
-            <ScrollToTop/>
-        </BrowserRouter>
+        <ContextProvider>
+            <BrowserRouter>
+                <App/>
+                <ScrollToTop/>
+            </BrowserRouter>
+        </ContextProvider>
     </React.StrictMode>
 );

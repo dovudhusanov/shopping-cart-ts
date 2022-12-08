@@ -44,11 +44,11 @@ function Navbar() {
                         <ul className="nav-list" ref={navRef}>
                             <Link to="/" onClick={navClose}><img src="./images/MiSto.png" alt="logo" className="logo logo-m"/></Link>
                             <li><NavLink to="/about" onClick={navClose}>About Us</NavLink></li>
-                            <li><NavLink to="/" onClick={navClose}>Women</NavLink></li>
-                            <li><NavLink to="/" onClick={navClose}>Men</NavLink></li>
-                            <li><NavLink to="/" onClick={navClose}>Electronic</NavLink></li>
-                            <li><NavLink to="/" onClick={navClose}>Jewelery</NavLink></li>
-                            <li><NavLink to="/" onClick={navClose}>Contact</NavLink></li>
+                            <li><NavLink to="/women-product" onClick={navClose}>Women</NavLink></li>
+                            <li><NavLink to="/men-product" onClick={navClose}>Men</NavLink></li>
+                            <li><NavLink to="/electronic-product" onClick={navClose}>Electronic</NavLink></li>
+                            <li><NavLink to="/jewelery-product" onClick={navClose}>Jewelery</NavLink></li>
+                            <li><NavLink to="/contact" onClick={navClose}>Contact</NavLink></li>
                         </ul>
                         <ul className="navbar-right">
                             <i className="fa-light fa-magnifying-glass"></i>

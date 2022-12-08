@@ -9,7 +9,6 @@ import HeaderComponent from "../../components/homeComponents/headerComponent/hea
 import HomeDiscountAd from "../../components/homeComponents/discountAdCards/homeDiscountAd";
 import SubscribeComponent from "../../components/subscribeComponent/subscribeComponent";
 import BlogComponent from "../../components/blogComponent/blogComponent";
-import Footer from "../../components/footer/footer";
 
 function Home() {
 
@@ -43,7 +42,6 @@ function Home() {
             </div>
             <SubscribeComponent/>
             <BlogComponent blogsTitle="latest from blog" />
-            <Footer />
         </>
     );
 }
