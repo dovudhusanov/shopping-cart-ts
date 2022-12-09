@@ -63,7 +63,7 @@ function ProductCard({title, category, product, singleProduct}: IProps) {
                                    </div>
                                </div>
                             </div>
-                            <div>
+                            <div className="button-to-view">
                                 <button>View</button>
                                 <button>Add To Cart</button>
                             </div>

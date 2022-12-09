@@ -1,28 +1,28 @@
-import React, {useContext, useState} from 'react';
-import "./women.css"
+import React, {useState} from 'react';
+import "../women/women.css"
 import ProductPageTitle from "../../components/productPageTitle/productPageTitle";
-import WomenCategory from "../../components/categoryAndProductComponents/womenCategory/womenCategory";
 import FilterProductMenu from "../../components/filterProductMenu/filterProductMenu";
 import changeTitle from "../../middleware/changeTitle";
 import {ScrollTop} from "../../middleware/scrollTop";
+import JeweleryCategory from "../../components/categoryAndProductComponents/jeweleryCategory/jeweleryCategory";
 
-function Women() {
-    changeTitle("Women Products")
+function Jewelery() {
+    changeTitle("Jewelery Products")
     ScrollTop()
 
     const [cartLine, setCartLine] = useState<boolean>(false)
 
     return (
         <div className="page" style={{marginTop: 90}}>
-            <ProductPageTitle title="women" locationTitle="Women"/>
+            <ProductPageTitle title="jewelery" locationTitle="Jewelery"/>
             <div className="container">
                 <FilterProductMenu setCartLine={setCartLine}/>
                 <div className={cartLine ? "product-main" : ""}>
-                    <WomenCategory  />
+                    <JeweleryCategory  />
                 </div>
             </div>
         </div>
     );
 }
 
-export default Women;
+export default Jewelery;

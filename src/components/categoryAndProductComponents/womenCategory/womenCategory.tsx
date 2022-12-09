@@ -1,7 +1,6 @@
 import React, {useContext} from 'react';
 import "./womenCategory.css"
 import ProductCard from "../productCard/productCard";
-import {sortedWomenCategories} from "../../../data/data";
 import {Context} from "../../../context/provider";
 
 function WomenCategory() {

@@ -1,28 +1,29 @@
-import React, {useContext, useState} from 'react';
-import "./women.css"
+import React, {useState} from 'react';
+import "../women/women.css"
 import ProductPageTitle from "../../components/productPageTitle/productPageTitle";
-import WomenCategory from "../../components/categoryAndProductComponents/womenCategory/womenCategory";
 import FilterProductMenu from "../../components/filterProductMenu/filterProductMenu";
 import changeTitle from "../../middleware/changeTitle";
 import {ScrollTop} from "../../middleware/scrollTop";
+import ElectroniccCategory from "../../components/categoryAndProductComponents/electroniccCategory/electroniccCategory";
+// import ElectronicCategory from "../../components/categoryAndProductComponents/electronicCategory/electronicCategory";
 
-function Women() {
-    changeTitle("Women Products")
+function Electronic() {
+    changeTitle("Electronic Products")
     ScrollTop()
 
     const [cartLine, setCartLine] = useState<boolean>(false)
 
     return (
         <div className="page" style={{marginTop: 90}}>
-            <ProductPageTitle title="women" locationTitle="Women"/>
+            <ProductPageTitle title="electronic" locationTitle="Electronic"/>
             <div className="container">
                 <FilterProductMenu setCartLine={setCartLine}/>
                 <div className={cartLine ? "product-main" : ""}>
-                    <WomenCategory  />
+                    <ElectroniccCategory  />
                 </div>
             </div>
         </div>
     );
 }
 
-export default Women;
+export default Electronic;

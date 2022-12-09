@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react';
 import "./filterProductMenu.css"
-import {brandFilter, color, priceFilter, sizes, sortedData} from "../../data/data";
+import {brandFilter, color, priceFilter, sizes} from "../../data/data";
 import {Context} from "../../context/provider";
 
 function FilterProductMenu({setCartLine}: any) {

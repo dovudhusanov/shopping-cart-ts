@@ -513,6 +513,22 @@ export const menProducts = sortedData.filter((product: IProduct) => product.cate
     }
 });
 
+export const ElectronicProducts = sortedData.filter((product: IProduct) => product.category.includes("electronics")).map((data: IProduct) => {
+    const idx = Math.floor(Math.random() * womenCategories.length)
+    return {
+        ...data,
+        category: womenCategories[idx]
+    }
+});
+
+export const JeweleryProducts = sortedData.filter((product: IProduct) => product.category.includes("jewelery")).map((data: IProduct) => {
+    const idx = Math.floor(Math.random() * womenCategories.length)
+    return {
+        ...data,
+        category: womenCategories[idx]
+    }
+});
+
 export let blogData: blogData[] = [
     {
         id: 1,

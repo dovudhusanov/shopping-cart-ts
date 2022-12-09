@@ -1,0 +1,33 @@
+.page-not-found{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+}
+
+.text-center-ntf{
+    text-align: center;
+}
+
+.text-center-ntf h1{
+    margin-bottom: 20px;
+}
+.btn{
+    background-color: #1c81fa;
+    color: #FFFFFF;
+    padding: 15px 20px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    position: relative;
+    top: 20px;
+}
+
+.btn:hover{
+    background-color: #378fff;
+}
