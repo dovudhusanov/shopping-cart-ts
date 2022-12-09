@@ -9,6 +9,7 @@ import Men from "./pages/men/men";
 import PageNotFound from "./pages/notFound/404";
 import Electronic from "./pages/electronic/electronic";
 import Jewelery from "./pages/jewelery/jewelery";
+import Contact from "./pages/contact/contact";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/men-product" element={<Men />} />
                 <Route path="/electronic-product" element={<Electronic />} />
                 <Route path="/jewelery-product" element={<Jewelery />} />
+                <Route path="/contact" element={<Contact />} />
                 <Route path="/*" element={<PageNotFound />} />
             </Routes>
             <Footer />
