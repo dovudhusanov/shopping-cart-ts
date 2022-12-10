@@ -12,7 +12,6 @@ interface contextProvider {
 
 export const Context = createContext<initialState | null>(null);
 
-
 export const ContextProvider = ({children}: contextProvider) => {
     // @ts-ignore
     const [products, setProducts] = useState<IProduct[]>(sortedWomenCategories)

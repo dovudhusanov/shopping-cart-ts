@@ -1,3 +1,18 @@
+import womenImg from "../images/productImage/womenProductImage/img.png"
+import womenImg1 from "../images/productImage/womenProductImage/img_1.png"
+import womenImg2 from "../images/productImage/womenProductImage/img_2.png"
+import womenImg3 from "../images/productImage/womenProductImage/img_3.png"
+import womenImg4 from "../images/productImage/womenProductImage/img_4.png"
+import womenImg5 from "../images/productImage/womenProductImage/img_5.png"
+import womenImg6 from "../images/productImage/womenProductImage/img_6.png"
+import menImg from "../images/productImage/menProductImage/img.png"
+import menImg1 from "../images/productImage/menProductImage/img_1.png"
+import menImg2 from "../images/productImage/menProductImage/img_2.png"
+import menImg3 from "../images/productImage/menProductImage/img_3.png"
+import menImg4 from "../images/productImage/menProductImage/img_4.png"
+import menImg5 from "../images/productImage/menProductImage/img_5.png"
+import menImg6 from "../images/productImage/menProductImage/img_6.png"
+
 let data: IProduct[] = [
     {
         "id": 1,
@@ -245,7 +260,7 @@ let data: IProduct[] = [
         "price": 38.12,
         "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
         "category": "women",
-        "image": "./images/productImage/womenProductImage/img.png",
+        "image": womenImg,
         "rating": {
             "rate": 3.6,
             "count": 145
@@ -257,7 +272,7 @@ let data: IProduct[] = [
         "price": 30.99,
         "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
         "category": "women",
-        "image": "./images/productImage/womenProductImage/img_1.png",
+        "image": womenImg1,
         "rating": {
             "rate": 3.6,
             "count": 145
@@ -269,7 +284,7 @@ let data: IProduct[] = [
         "price": 54.99,
         "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
         "category": "women",
-        "image": "./images/productImage/womenProductImage/img_2.png",
+        "image": womenImg2,
         "rating": {
             "rate": 3.6,
             "count": 145
@@ -281,7 +296,7 @@ let data: IProduct[] = [
         "price": 21.11,
         "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
         "category": "women",
-        "image": "./images/productImage/womenProductImage/img_3.png",
+        "image": womenImg3,
         "rating": {
             "rate": 3.6,
             "count": 145
@@ -293,7 +308,7 @@ let data: IProduct[] = [
         "price": 32.42,
         "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
         "category": "women",
-        "image": "./images/productImage/womenProductImage/img_4.png",
+        "image": womenImg4,
         "rating": {
             "rate": 3.6,
             "count": 145
@@ -305,7 +320,7 @@ let data: IProduct[] = [
         "price": 68.99,
         "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
         "category": "women",
-        "image": "./images/productImage/womenProductImage/img_5.png",
+        "image": womenImg5,
         "rating": {
             "rate": 3.6,
             "count": 145
@@ -317,7 +332,7 @@ let data: IProduct[] = [
         "price": 32.42,
         "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
         "category": "women",
-        "image": "./images/productImage/womenProductImage/img_6.png",
+        "image": womenImg6,
         "rating": {
             "rate": 3.6,
             "count": 145
@@ -329,7 +344,7 @@ let data: IProduct[] = [
         "price": 20.99,
         "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
         "category": "women",
-        "image": "./images/productImage/womenProductImage/img_2.png",
+        "image": womenImg2,
         "rating": {
             "rate": 3.6,
             "count": 145
@@ -340,7 +355,7 @@ let data: IProduct[] = [
         "price": 30.99,
         "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
         "category": "women",
-        "image": "./images/productImage/womenProductImage/img_1.png",
+        "image": womenImg1,
         "rating": {
             "rate": 3.6,
             "count": 145
@@ -352,7 +367,7 @@ let data: IProduct[] = [
         "price": 40.12,
         "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
         "category": "women",
-        "image": "./images/productImage/womenProductImage/img.png",
+        "image": womenImg,
         "rating": {
             "rate": 3.6,
             "count": 145
@@ -364,7 +379,7 @@ let data: IProduct[] = [
         "price": 99.99,
         "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
         "category": "man",
-        "image": "./images/productImage/menProductImage/img_2.png",
+        "image": menImg2,
         "rating": {
             "rate": 2.1,
             "count": 430
@@ -376,7 +391,7 @@ let data: IProduct[] = [
         "price": 10.99,
         "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
         "category": "man",
-        "image": "./images/productImage/menProductImage/img_6.png",
+        "image": menImg6,
         "rating": {
             "rate": 2.1,
             "count": 430
@@ -389,7 +404,7 @@ let data: IProduct[] = [
         "price": 15.99,
         "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
         "category": "man",
-        "image": "./images/productImage/menProductImage/img_5.png",
+        "image": menImg5,
         "rating": {
             "rate": 2.1,
             "count": 430
@@ -402,7 +417,7 @@ let data: IProduct[] = [
         "price": 30.99,
         "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
         "category": "man",
-        "image": "./images/productImage/menProductImage/img_4.png",
+        "image": menImg4,
         "rating": {
             "rate": 2.1,
             "count": 430
@@ -415,7 +430,7 @@ let data: IProduct[] = [
         "price": 23.50,
         "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
         "category": "man",
-        "image": "./images/productImage/menProductImage/img_3.png",
+        "image": menImg3,
         "rating": {
             "rate": 2.1,
             "count": 430
@@ -428,7 +443,7 @@ let data: IProduct[] = [
         "price": 25.50,
         "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
         "category": "man",
-        "image": "./images/productImage/menProductImage/img_2.png",
+        "image": menImg2,
         "rating": {
             "rate": 2.1,
             "count": 430
@@ -441,7 +456,7 @@ let data: IProduct[] = [
         "price": 19.99,
         "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
         "category": "man",
-        "image": "./images/productImage/menProductImage/img_1.png",
+        "image": menImg1,
         "rating": {
             "rate": 2.1,
             "count": 430
@@ -454,7 +469,7 @@ let data: IProduct[] = [
         "price": 20.99,
         "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
         "category": "man",
-        "image": "./images/productImage/menProductImage/img.png",
+        "image": menImg,
         "rating": {
             "rate": 2.1,
             "count": 430
@@ -470,7 +485,7 @@ export interface IProduct {
     "description": string,
     "category": string,
     "image": string,
-    size?:string;
+    size?: string;
     "rating": IRating
 }
 
@@ -514,18 +529,14 @@ export const menProducts = sortedData.filter((product: IProduct) => product.cate
 });
 
 export const ElectronicProducts = sortedData.filter((product: IProduct) => product.category.includes("electronics")).map((data: IProduct) => {
-    const idx = Math.floor(Math.random() * womenCategories.length)
     return {
         ...data,
-        category: womenCategories[idx]
     }
 });
 
 export const JeweleryProducts = sortedData.filter((product: IProduct) => product.category.includes("jewelery")).map((data: IProduct) => {
-    const idx = Math.floor(Math.random() * womenCategories.length)
     return {
         ...data,
-        category: womenCategories[idx]
     }
 });
 

@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react';
 import "./productCard.css"
 import {IProduct, sortedData, womenCategories} from "../../../data/data";
+import {Link} from "react-router-dom";
 
 interface IProps {
     category: string,
@@ -21,8 +22,7 @@ function ProductCard({title, category, product, singleProduct}: IProps) {
         showAll ? setEndIdx(sortedData.length) : setEndIdx(8)
     }
 
-
-    const sinleProducts = singleProduct ? product.reverse().slice(0, endIdx) : filteredProducts.reverse().slice(0, endIdx);
+    const singleProducts = singleProduct ? product.reverse().slice(0, endIdx) : filteredProducts.reverse().slice(0, endIdx);
 
 
     const filterProduct = (category: string, index: number) => {
@@ -45,29 +45,31 @@ function ProductCard({title, category, product, singleProduct}: IProps) {
 
             <div>
                 <div className="product-cards">
-                    {sinleProducts.map((product, index: number) => (
-                        <div className="product-card" key={index + 1}>
-                            <div className="cart-line-flex">
-                                <img src={product.image} alt={product.title}/>
-                               <div>
-                                   <h3>{product.title}</h3>
-                                   <div className="product-price">
-                                       <span>$ {product.price}</span>
-                                       <div className="stars">
-                                           <i className="fa-solid fa-star"></i>
-                                           <i className="fa-solid fa-star"></i>
-                                           <i className="fa-solid fa-star"></i>
-                                           <i className="fa-solid fa-star"></i>
-                                           <i className="fa-solid fa-star"></i>
-                                       </div>
-                                   </div>
-                               </div>
+                    {singleProducts.map((product, index: number) => (
+                        <Link to={`/product/${product.category}/${product.id}`}>
+                            <div className="product-card" key={index + 1}>
+                                <div className="cart-line-flex">
+                                    <img src={product.image} alt={product.title}/>
+                                    <div>
+                                        <h3>{product.title}</h3>
+                                        <div className="product-price">
+                                            <span>$ {product.price}</span>
+                                            <div className="stars">
+                                                <i className="fa-solid fa-star"></i>
+                                                <i className="fa-solid fa-star"></i>
+                                                <i className="fa-solid fa-star"></i>
+                                                <i className="fa-solid fa-star"></i>
+                                                <i className="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="button-to-view">
+                                    <button>View</button>
+                                    <button>Add To Cart</button>
+                                </div>
                             </div>
-                            <div className="button-to-view">
-                                <button>View</button>
-                                <button>Add To Cart</button>
-                            </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
                 <button className="showProductsBtn" onClick={clickBtn}>{showAll ? "See All" : "Hide"}</button>
