@@ -8,7 +8,7 @@ function WomenCategory() {
     let {products} = useContext(Context) as Context;
     return (
         <div className="women-category">
-            <ProductCard  singleProduct={true} product={products} title={"Women's"} category={"women"}/>
+            <ProductCard singleProduct={true} product={products} title={"Women's"} category={"women"}/>
         </div>
     );
 }

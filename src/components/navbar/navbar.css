@@ -121,6 +121,20 @@
     width: 100%;
 }
 
+.nav-list li .active{
+    position: relative;
+}
+
+.nav-list li .active::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #121212;
+    left: 0;
+}
+
 .burger {
     cursor: pointer;
     display: none;

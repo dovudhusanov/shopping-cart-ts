@@ -12,7 +12,7 @@ import BlogComponent from "../../components/blogComponent/blogComponent";
 
 function Home() {
 
-    changeTitle("Home")
+    changeTitle("Home Page")
     ScrollTop()
 
     return (

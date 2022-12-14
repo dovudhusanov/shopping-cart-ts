@@ -1,7 +1,12 @@
 import React from 'react';
 import "./contact.css"
+import changeTitle from "../../middleware/changeTitle";
+import {ScrollTop} from "../../middleware/scrollTop";
 
 function Contact() {
+    changeTitle("Contact")
+    ScrollTop()
+
     return (
         <div className="container">
             <section className="contactSection" id="contact">

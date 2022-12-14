@@ -15,7 +15,7 @@ function Electronic() {
 
     return (
         <div className="page" style={{marginTop: 90}}>
-            <ProductPageTitle title="electronic" locationTitle="Electronic"/>
+            <ProductPageTitle title="electronic" locationTitle2="" locationTitle="Electronic"/>
             <div className="container">
                 <FilterProductMenu setCartLine={setCartLine}/>
                 <div className={cartLine ? "product-main" : ""}>

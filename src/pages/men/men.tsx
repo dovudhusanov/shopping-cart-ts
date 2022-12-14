@@ -15,7 +15,7 @@ function Men() {
 
     return (
         <div className="page" style={{marginTop: 90}}>
-            <ProductPageTitle title="men" locationTitle="Men"/>
+            <ProductPageTitle title="men" locationTitle="Men" locationTitle2=""/>
             <div className="container">
                 <FilterProductMenu setCartLine={setCartLine}/>
                 <div className={cartLine ? "product-main" : ""}>

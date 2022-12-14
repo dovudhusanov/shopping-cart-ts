@@ -2,6 +2,8 @@ import React, {useRef, useState} from 'react';
 import "./productCard.css"
 import {IProduct, sortedData, womenCategories} from "../../../data/data";
 import {Link} from "react-router-dom";
+import changeTitle from "../../../middleware/changeTitle";
+import {ScrollTop} from "../../../middleware/scrollTop";
 
 interface IProps {
     category: string,
@@ -11,6 +13,9 @@ interface IProps {
 }
 
 function ProductCard({title, category, product, singleProduct}: IProps) {
+
+    changeTitle(category + " product")
+    ScrollTop()
 
     const [endIdx, setEndIdx] = useState<number>(8)
     const [showAll, setShowAll] = useState<boolean>(true)
@@ -46,30 +51,30 @@ function ProductCard({title, category, product, singleProduct}: IProps) {
             <div>
                 <div className="product-cards">
                     {singleProducts.map((product, index: number) => (
-                        <Link to={`/product/${product.category}/${product.id}`}>
-                            <div className="product-card" key={index + 1}>
-                                <div className="cart-line-flex">
+                        <div className="product-card" key={index + 1}>
+                            <div className="cart-line-flex">
+                                <Link to={`/product/${product.category}/${product.id}`}>
                                     <img src={product.image} alt={product.title}/>
-                                    <div>
-                                        <h3>{product.title}</h3>
-                                        <div className="product-price">
-                                            <span>$ {product.price}</span>
-                                            <div className="stars">
-                                                <i className="fa-solid fa-star"></i>
-                                                <i className="fa-solid fa-star"></i>
-                                                <i className="fa-solid fa-star"></i>
-                                                <i className="fa-solid fa-star"></i>
-                                                <i className="fa-solid fa-star"></i>
-                                            </div>
+                                </Link>
+                                <div>
+                                    <h3>{product.title}</h3>
+                                    <div className="product-price">
+                                        <span>$ {product.price}</span>
+                                        <div className="stars">
+                                            <i className="fa-solid fa-star"></i>
+                                            <i className="fa-solid fa-star"></i>
+                                            <i className="fa-solid fa-star"></i>
+                                            <i className="fa-solid fa-star"></i>
+                                            <i className="fa-solid fa-star"></i>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="button-to-view">
-                                    <button>View</button>
-                                    <button>Add To Cart</button>
-                                </div>
                             </div>
-                        </Link>
+                            <div className="button-to-view">
+                                <Link to={`/product/${product.category}/${product.id}`}>View</Link>
+                                <button>Add To Cart</button>
+                            </div>
+                        </div>
                     ))}
                 </div>
                 <button className="showProductsBtn" onClick={clickBtn}>{showAll ? "See All" : "Hide"}</button>

@@ -1,87 +1,158 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
+import "./productPage.css"
 import {useParams} from "react-router-dom";
 import {color, IProduct, sizes, sortedData} from "../../data/data";
+import PageTitle from "../../components/productPageTitle/productPageTitle";
+import {ScrollTop} from "../../middleware/scrollTop";
+import img from "../../imagesBuy/productBuyCard/img.png"
+import img2 from "../../imagesBuy/productBuyCard/img_1.png"
+import img3 from "../../imagesBuy/productBuyCard/img_2.png"
+import img4 from "../../imagesBuy/productBuyCard/img_3.png"
+import img5 from "../../imagesBuy/productBuyCard/img_4.png"
+import img6 from "../../imagesBuy/productBuyCard/img_5.png"
+import img7 from "../../imagesBuy/productBuyCard/img_6.png"
 
 function ProductPage() {
 
+    ScrollTop()
     const {productId} = useParams()
     // @ts-ignore
     const product = sortedData.filter((id: IProduct) => id.id == productId)
     // const productDetail = {}
+    const [saveProduct, setSaveProduct] = useState<boolean>(false)
     return (
         <div style={{marginTop: 130}}>
             {product.map((product) => (
-                <div className="product-div">
-                    <div className="product-image">
-                        <div className="mini-image-slider">
-                            <img src={product.image} alt="img"/>
-                        </div>
-                        <div className="primary-image-slider">
-                            <img src={product.image} alt="img"/>
-                        </div>
-                    </div>
-                    <div className="product-info">
-                        <span className="product-color">COLOR: <span>{product.color}</span></span>
-                        <img src={product.image} alt="img"/>
-                        <div className="product-size">
-                            <span>SIZE: <span>{product.size}</span></span>
-                            <div className="product-sizes">
-                                {sizes.map((size) => (
-                                    <div className="size-box">
-                                        {size}
+                <>
+                    <PageTitle title={product.title} locationTitle2={product.category}
+                               locationTitle={"> " + product.title}/>
+                    <div className="container">
+                        <div className="product-div">
+                            <div className="product-image">
+                                <div className="mini-image-slider">
+                                    <div>
+                                        <i className="fa-solid fa-chevron-up"></i>
+                                        <i className="fa-solid fa-chevron-down"></i>
                                     </div>
-                                ))}
-                            </div>
-                            <span>Size guide</span>
-                        </div>
-                        <div className="product-buy">
-                            <span>{product.price}</span>
-                            <button>Add To Card</button>
-                        </div>
-                        <div className="product-services">
-                            <span>Shipping & Delivery</span>
-                            <span>Returns & Exchanges</span>
-                            <span>Ask a question</span>
-                        </div>
-                        <div className="product-buy-system">
-                            <h1>guaranteed safe checkout</h1>
-                            <img src="" alt=""/>
-                            <img src="" alt=""/>
-                            <img src="" alt=""/>
-                            <img src="" alt=""/>
-                            <img src="" alt=""/>
-                            <img src="" alt=""/>
-                        </div>
-                        <span className="product-description-text"></span>
-                        <div className="additional-info">
-                            <h1>ADDITIONAL INFORMATION</h1>
-                            <span>Color: {color.slice(0, 4).map(color => (
-                                <>{color}</>
-                            ))}</span>
-                            <span>Size: {sizes.map(size => (
-                                <>{size}</>
-                            ))}</span>
-                            <span>Material: 100% Polyester</span>
-                        </div>
-                        <div className="reviews">
-                            <div className="product-stars">
-
-                            </div>
-                            <div className="comments">
-                                <div>
-                                    <span>Oleh Chabanov</span>
-                                    <p>On the other hand, we denounce with righteous indignation and like men who are so
-                                        beguiled and demoralized by the charms of pleasure of the moment</p>
+                                    <img src={product.image} alt="img"/>
                                 </div>
-                                <div>
-                                    <span>Oleh Chabanov</span>
-                                    <p>On the other hand, we denounce with righteous indignation and like men who are so
-                                        beguiled and demoralized by the charms of pleasure of the moment</p>
+                                <div className="primary-image-slider">
+                                    <img src={product.image} alt="img"/>
+                                </div>
+                            </div>
+                            <div className="product-info">
+                                <span
+                                    className="product-info-title-span"><p>COLOR:</p> <span>{product.color}</span></span>
+                                <img src={product.image} alt="img" className="product-info-img"/>
+                                <div className="product-size">
+                                    <span
+                                        className="product-info-title-span"><p>SIZE:</p> <span>{product.size}</span></span>
+                                    <div className="product-sizes">
+                                        {sizes.map((size) => (
+                                            <div className="size-box">
+                                                {size}
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <span className="product-size-cloth-icon"><i
+                                        className="fa-regular fa-clothes-hanger"></i> Size guide</span>
+                                </div>
+                                <div className="product-buy">
+                                    <div>
+                                        <span>$ {product.price}</span>
+                                        <button className="add-btn">Add To Card</button>
+                                        <button className="save-product"
+                                                onClick={() => setSaveProduct(prevState => !prevState)}>
+                                            {saveProduct ? <i className="fa-solid fa-heart"></i> :
+                                                <i className="fa-light fa-heart"></i>}
+                                        </button>
+                                        <i className="fa-thin fa-scale-balanced"></i>
+                                    </div>
+                                </div>
+                                <div className="product-services">
+                                    <span><i className="fa-light fa-truck"></i> Shipping & Delivery</span>
+                                    <span><i className="fa-thin fa-arrows-rotate"></i> Returns & Exchanges</span>
+                                    <span><i className="fa-thin fa-envelope"></i> Ask a question</span>
+                                </div>
+                                <div className="product-buy-system">
+                                    <h1>guaranteed safe checkout</h1>
+                                    <div>
+                                        <img src={img} alt="img"/>
+                                        <img src={img2} alt="img"/>
+                                        <img src={img3} alt="img"/>
+                                        <img src={img4} alt="img"/>
+                                        <img src={img5} alt="img"/>
+                                        <img src={img6} alt="img"/>
+                                        <img src={img} alt="img"/>
+                                    </div>
+                                </div>
+                                <div className="product-description-text">
+                                    <span className="product-info-title-span"><p>description</p></span>
+                                </div>
+                                <div className="additional-info">
+                                    <h1>ADDITIONAL INFORMATION</h1>
+                                    <span>Color: {color.slice(0, 4).map(color => (
+                                        <span>{color} </span>
+                                    ))}</span>
+                                    <span>Size: {sizes.map(size => (
+                                        <span>{size} </span>
+                                    ))}</span>
+                                    <span>Material: <span>100% Polyester</span></span>
+                                </div>
+                                <div className="reviews">
+                                    <h1>REVIEWS</h1>
+                                    <div className="product-stars">
+                                        <div>
+                                            <i className="fa-solid fa-star"></i>
+                                            <i className="fa-solid fa-star"></i>
+                                            <i className="fa-solid fa-star"></i>
+                                            <i className="fa-solid fa-star"></i>
+                                            <i className="fa-solid fa-star"></i>
+                                            <span> 2 Reviews</span>
+                                        </div>
+                                        <span><i className="fa-light fa-message-lines"></i> Write a review</span>
+                                    </div>
+                                    <div className="comments">
+                                        <div>
+                                            <div>
+                                                <span className="comment-user-name">Oleh Chabanov</span>
+                                                <span className="comment-user-name-star">
+                                                    3 months ago
+                                                    <i className="fa-solid fa-star"></i>
+                                                    <i className="fa-solid fa-star"></i>
+                                                    <i className="fa-solid fa-star"></i>
+                                                    <i className="fa-solid fa-star"></i>
+                                                    <i className="fa-solid fa-star"></i>
+                                                </span>
+                                            </div>
+                                            <p>On the other hand, we denounce with righteous indignation and like men
+                                                who
+                                                are so
+                                                beguiled and demoralized by the charms of pleasure of the moment</p>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <span className="comment-user-name">Oleh Chabanov</span>
+                                                <span className="comment-user-name-star">
+                                                    3 months ago
+                                                    <i className="fa-solid fa-star"></i>
+                                                    <i className="fa-solid fa-star"></i>
+                                                    <i className="fa-solid fa-star"></i>
+                                                    <i className="fa-solid fa-star"></i>
+                                                    <i className="fa-solid fa-star"></i>
+                                                </span>
+                                            </div>
+                                            <p>On the other hand, we denounce with righteous indignation and like men
+                                                who
+                                                are so
+                                                beguiled and demoralized by the charms of pleasure of the moment</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </>
             ))}
         </div>
     );

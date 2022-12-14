@@ -14,7 +14,7 @@ function Women() {
 
     return (
         <div className="page" style={{marginTop: 90}}>
-            <ProductPageTitle title="women" locationTitle="Women"/>
+            <ProductPageTitle title="women" locationTitle2="" locationTitle="Women"/>
             <div className="container">
                 <FilterProductMenu setCartLine={setCartLine}/>
                 <div className={cartLine ? "product-main" : ""}>

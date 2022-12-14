@@ -15,7 +15,7 @@
     color: rgb(18, 18, 18);
 }
 
-.page-location-share span a{
+.page-location-share .link-pred{
     color: rgba(18, 18, 18, 0.52);
 }
 
@@ -31,4 +31,10 @@
     text-transform: uppercase;
     color: #121212;
     padding: 20px 0 10px 0;
+}
+
+@media screen and (max-width: 425px) {
+    .product-page-title h1{
+        font-size: 20px;
+    }
 }

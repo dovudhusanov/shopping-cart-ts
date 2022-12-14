@@ -132,7 +132,7 @@
     display: none;
 }
 
-.button-to-view button{
+.button-to-view button, .button-to-view a{
     font-size: 10px;
     font-weight: 400;
     text-transform: uppercase;
@@ -144,9 +144,10 @@
     cursor: pointer;
     border: 1px solid transparent;
     transition: 0.3s ease;
+    text-align: center;
 }
 
-.button-to-view button:hover{
+.button-to-view button:hover, .button-to-view a:hover{
     background-color: #FFFFFF;
     color: #1c81fa;
     border: 1px solid #1c81fa;

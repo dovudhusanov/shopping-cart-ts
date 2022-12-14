@@ -10,7 +10,7 @@ function About() {
 
     return (
         <div style={{marginTop: 90}}>
-            <PageTitle title="about us" locationTitle="About Us" />
+            <PageTitle title="about us" locationTitle2="" locationTitle="About Us" />
             <BlogComponent blogsTitle="latest from About"/>
             <div className="container">
                 <h1>About Us</h1>

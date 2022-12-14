@@ -13,6 +13,7 @@ import Contact from "./pages/contact/contact";
 import ProductPage from "./pages/productPage/productPage";
 
 function App() {
+
     return (
         <>
             <Navbar/>
