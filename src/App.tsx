@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Route, Routes} from "react-router-dom";
 import Home from "./pages/home/home";
 import About from "./pages/about/about";
@@ -11,12 +11,16 @@ import Electronic from "./pages/electronic/electronic";
 import Jewelery from "./pages/jewelery/jewelery";
 import Contact from "./pages/contact/contact";
 import ProductPage from "./pages/productPage/productPage";
+import CartModal from "./pages/cart/cartModal/cartModal";
 
 function App() {
 
+    const [cart, setCart] = useState<boolean>(false)
+
     return (
         <>
-            <Navbar/>
+            <Navbar  setCart={() => setCart(true)}/>
+            <CartModal setCart={() => setCart(false)} className={cart ? "cart-modal active" : "cart-modal"}/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/about" element={<About/>}/>

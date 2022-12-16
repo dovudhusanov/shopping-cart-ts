@@ -482,11 +482,13 @@ export interface IProduct {
     "id": number,
     "title": string;
     "price": number,
+    quantity?:number;
     "description": string,
     "category": string,
     "image": string,
     size?: string;
     "rating": IRating
+    color?: string
 }
 
 interface IRating {
@@ -504,6 +506,7 @@ export let sortedData = data.map((data: IProduct) => {
     const idxColor = Math.floor(Math.random() * color.length)
     return {
         ...data,
+        quantity:1,
         size: sizes[idx],
         color: color[idxColor]
     }

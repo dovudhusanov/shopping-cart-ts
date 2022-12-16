@@ -1,8 +1,9 @@
 import React, {useRef} from 'react';
 import "./navbar.css"
 import {NavLink, Link} from "react-router-dom";
+import {useSelector} from "react-redux";
 
-function Navbar() {
+function Navbar({setCart}: boolean | any) {
 
     const navRef: any = useRef()
     const animate: any = useRef()
@@ -17,6 +18,9 @@ function Navbar() {
             animate.current.classList.remove("active");
         }
     };
+
+    // @ts-ignore
+    const totalProduct = useSelector(state => state.product)
 
     return (
         <nav className='nav'>
@@ -54,9 +58,9 @@ function Navbar() {
                             <i className="fa-light fa-magnifying-glass"></i>
                             <input type="search" placeholder="search..." className='search-input'/>
                             <i className="fa-light fa-earth-asia"></i>
-                            <li className="cart-icon">
+                            <li className="cart-icon" onClick={setCart}>
                                 <i className="fa-regular fa-bag-shopping"></i>
-                                <span className="total-product">1</span>
+                                <span className="total-product">{totalProduct.length}</span>
                             </li>
                         </ul>
                         <div className="burger" onClick={showNav} ref={animate}>

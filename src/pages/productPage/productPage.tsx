@@ -4,26 +4,31 @@ import {useParams} from "react-router-dom";
 import {color, IProduct, sizes, sortedData} from "../../data/data";
 import PageTitle from "../../components/productPageTitle/productPageTitle";
 import {ScrollTop} from "../../middleware/scrollTop";
-import img from "../../imagesBuy/productBuyCard/img.png"
-import img2 from "../../imagesBuy/productBuyCard/img_1.png"
-import img3 from "../../imagesBuy/productBuyCard/img_2.png"
-import img4 from "../../imagesBuy/productBuyCard/img_3.png"
-import img5 from "../../imagesBuy/productBuyCard/img_4.png"
-import img6 from "../../imagesBuy/productBuyCard/img_5.png"
-import img7 from "../../imagesBuy/productBuyCard/img_6.png"
+import img from "../../images/imagesBuy/productBuyCard/img.png"
+import img2 from "../../images/imagesBuy/productBuyCard/img_1.png"
+import img3 from "../../images/imagesBuy/productBuyCard/img_2.png"
+import img4 from "../../images/imagesBuy/productBuyCard/img_3.png"
+import img5 from "../../images/imagesBuy/productBuyCard/img_4.png"
+import img6 from "../../images/imagesBuy/productBuyCard/img_5.png"
+import img7 from "../../images/imagesBuy/productBuyCard/img_6.png"
+import {useDispatch, useSelector} from "react-redux";
+import {addToCart} from "../../action/productOnCart";
 
 function ProductPage() {
 
     ScrollTop()
     const {productId} = useParams()
     // @ts-ignore
-    const product = sortedData.filter((id: IProduct) => id.id == productId)
-    // const productDetail = {}
+    const product = useSelector(state => state.products.products.filter(id => id.id == productId))
+    const dispatch = useDispatch()
+    const handleAdd = (productItem: IProduct) => {
+        dispatch(addToCart(productItem))
+    }
     const [saveProduct, setSaveProduct] = useState<boolean>(false)
     return (
         <div style={{marginTop: 130}}>
-            {product.map((product) => (
-                <>
+            {product.map((product: IProduct, index: number) => (
+                <div key={index + 1}>
                     <PageTitle title={product.title} locationTitle2={product.category}
                                locationTitle={"> " + product.title}/>
                     <div className="container">
@@ -48,8 +53,8 @@ function ProductPage() {
                                     <span
                                         className="product-info-title-span"><p>SIZE:</p> <span>{product.size}</span></span>
                                     <div className="product-sizes">
-                                        {sizes.map((size) => (
-                                            <div className="size-box">
+                                        {sizes.map((size, index) => (
+                                            <div className="size-box" key={index + 1}>
                                                 {size}
                                             </div>
                                         ))}
@@ -60,7 +65,7 @@ function ProductPage() {
                                 <div className="product-buy">
                                     <div>
                                         <span>$ {product.price}</span>
-                                        <button className="add-btn">Add To Card</button>
+                                        <button className="add-btn" onClick={() => handleAdd(product)}>Add To Card</button>
                                         <button className="save-product"
                                                 onClick={() => setSaveProduct(prevState => !prevState)}>
                                             {saveProduct ? <i className="fa-solid fa-heart"></i> :
@@ -83,7 +88,7 @@ function ProductPage() {
                                         <img src={img4} alt="img"/>
                                         <img src={img5} alt="img"/>
                                         <img src={img6} alt="img"/>
-                                        <img src={img} alt="img"/>
+                                        <img src={img7} alt="img"/>
                                     </div>
                                 </div>
                                 <div className="product-description-text">
@@ -94,8 +99,8 @@ function ProductPage() {
                                     <span>Color: {color.slice(0, 4).map(color => (
                                         <span>{color} </span>
                                     ))}</span>
-                                    <span>Size: {sizes.map(size => (
-                                        <span>{size} </span>
+                                    <span>Size: {sizes.map((size,index) => (
+                                        <span key={index + 1}>{size} </span>
                                     ))}</span>
                                     <span>Material: <span>100% Polyester</span></span>
                                 </div>
@@ -152,7 +157,7 @@ function ProductPage() {
                             </div>
                         </div>
                     </div>
-                </>
+                </div>
             ))}
         </div>
     );

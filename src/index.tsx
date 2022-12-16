@@ -5,6 +5,8 @@ import App from './App';
 import {BrowserRouter} from "react-router-dom";
 import ScrollToTop from "./middleware/ScrollToTop/scrollToTop";
 import {ContextProvider} from "./context/provider";
+import {Provider} from "react-redux";
+import {store} from "./configStore";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -12,10 +14,12 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <ContextProvider>
-            <BrowserRouter>
-                <App/>
-                <ScrollToTop/>
-            </BrowserRouter>
+           <Provider store={store}>
+               <BrowserRouter>
+                   <App/>
+                   <ScrollToTop/>
+               </BrowserRouter>
+           </Provider>
         </ContextProvider>
     </React.StrictMode>
 );

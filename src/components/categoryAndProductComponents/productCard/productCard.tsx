@@ -1,9 +1,10 @@
-import React, {useRef, useState} from 'react';
+import React, {useReducer, useRef, useState} from 'react';
 import "./productCard.css"
 import {IProduct, sortedData, womenCategories} from "../../../data/data";
 import {Link} from "react-router-dom";
 import changeTitle from "../../../middleware/changeTitle";
 import {ScrollTop} from "../../../middleware/scrollTop";
+import {useSelector} from "react-redux";
 
 interface IProps {
     category: string,
@@ -17,18 +18,20 @@ function ProductCard({title, category, product, singleProduct}: IProps) {
     changeTitle(category + " product")
     ScrollTop()
 
+    // @ts-ignore
+    const products = useSelector(state => state.products)
+
     const [endIdx, setEndIdx] = useState<number>(8)
     const [showAll, setShowAll] = useState<boolean>(true)
     const [activeIndex, setActiveIndex] = useState(0)
-    const [filteredProducts, setFilteredProduct] = useState(sortedData.filter((product: IProduct) => product.category === category))
+    const [filteredProducts, setFilteredProduct] = useState(products.products.filter((product: IProduct) => product.category === category))
 
     const clickBtn = () => {
         setShowAll(prevState => !prevState)
-        showAll ? setEndIdx(sortedData.length) : setEndIdx(8)
+        showAll ? setEndIdx(products.products.length) : setEndIdx(8)
     }
 
     const singleProducts = singleProduct ? product.reverse().slice(0, endIdx) : filteredProducts.reverse().slice(0, endIdx);
-
 
     const filterProduct = (category: string, index: number) => {
         // @ts-ignore
@@ -50,7 +53,7 @@ function ProductCard({title, category, product, singleProduct}: IProps) {
 
             <div>
                 <div className="product-cards">
-                    {singleProducts.map((product, index: number) => (
+                    {singleProducts.map((product: IProduct, index: number) => (
                         <div className="product-card" key={index + 1}>
                             <div className="cart-line-flex">
                                 <Link to={`/product/${product.category}/${product.id}`}>
