@@ -1,7 +1,7 @@
 .cart-modal {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     width: 100%;
     height: 100%;
     background-color: rgba(18, 18, 18, 0.34);
@@ -12,24 +12,146 @@
 .cart-modal.active{
     opacity: 1;
     z-index: 2000;
+    right: 0;
 }
 
 .cart-modal-content {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 350px;
+    width: 320px;
     height: 100%;
     background-color: #FFFFFF;
-    transition: 0.3s ease-out;
+    transition: 0.5s ease;
+    overflow-y: auto;
+    padding: 0 10px;
+}
+
+@media screen and (max-width: 425px) {
+    .cart-modal-content{
+        width: 100%;
+    }
+}
+
+.cart-modal-content::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.cart-modal-content::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
+
+.cart-modal-content::-webkit-scrollbar-thumb {
+    background-color: transparent;
 }
 
 .cart-modal.active .cart-modal-content{
     right: 0;
 }
 
-.cart-modal-content .fa-xmark{
-    padding: 10px;
+.cart-modal-content .fa-right-to-line{
+    padding: 8px 13px;
     font-size: 25px;
     cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.empty-basket{
+    text-align: center;
+}
+
+.empty-basket i{
+    font-size: 55px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.empty-basket span{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.empty-basket a{
+    width: 100%;
+    margin: 15px 0 0 0;
+    display: block;
+}
+
+.cart-products{
+    margin-top: 35px;
+    padding: 20px 8px;
+}
+
+.cart-product{
+    width: 100%;
+    min-height: 140px;
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.35);
+    padding-bottom: 25px;
+}
+
+.cart-product img{
+    width: 120px;
+}
+
+.cart-product-info{
+    padding-left: 15px;
+    position: relative;
+    /*top: 10px;*/
+}
+
+.cart-product-info .title{
+    font-size: 13px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.quantity-add{
+    border: 1px solid grey;
+    display: inline;
+    padding: 2px 5px;
+}
+
+.quantity-add span{
+    padding: 0 10px;
+    font-size: 13px;
+}
+
+.quantity-add button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.delete-btn{
+    background-color: #E91E63;
+    color: #FFFFFF;
+    padding: 6px 15px;
+    font-size: 11px;
+    margin: 0 0 0 6px;
+    text-transform: none;
+    position: relative;
+    top: -2.6px;
+}
+
+.total-price{
+    width: 100%;
+}
+
+.total-price span, pre{
+    font-size: 17px;
+    font-weight: 700;
+    display: inline;
+}
+
+.total-price a{
+    width: 100%;
+    margin: 15px 0 0 0;
+    display: block;
+    text-align: center;
 }

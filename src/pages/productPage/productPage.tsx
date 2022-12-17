@@ -65,7 +65,7 @@ function ProductPage() {
                                 <div className="product-buy">
                                     <div>
                                         <span>$ {product.price}</span>
-                                        <button className="add-btn" onClick={() => handleAdd(product)}>Add To Card</button>
+                                        <button className="btn-primary" onClick={() => handleAdd(product)}>Add To Card</button>
                                         <button className="save-product"
                                                 onClick={() => setSaveProduct(prevState => !prevState)}>
                                             {saveProduct ? <i className="fa-solid fa-heart"></i> :

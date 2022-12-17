@@ -10,6 +10,6 @@ export const addToCart = (product: any) => {
 export const deleteProductFromCart = (id: number) => {
     return {
         type: TODO.DELETE_PRODUCT,
-        payload: {id}
+        payload: id
     }
 }

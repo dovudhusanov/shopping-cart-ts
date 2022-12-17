@@ -94,7 +94,7 @@ let data: IProduct[] = [
         "category": "jewelery",
         "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
         "rating": {
-            "rate": 3,
+            "rate": 3.3,
             "count": 400
         }
     },
@@ -226,7 +226,7 @@ let data: IProduct[] = [
         "category": "women",
         "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
         "rating": {
-            "rate": 4.7,
+            "rate": 3.2,
             "count": 130
         }
     },
@@ -239,19 +239,19 @@ let data: IProduct[] = [
         "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
         "rating": {
             "rate": 4.5,
-            "count": 146
+            "count": 346
         }
     },
     {
-        "id": 20,
+        "id": 3.6,
         "title": "DANVOUY Womens",
         "price": 12.99,
         "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
         "category": "women",
         "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
         "rating": {
-            "rate": 3.6,
-            "count": 145
+            "rate": 4.9,
+            "count": 400
         }
     },
     {
@@ -262,8 +262,8 @@ let data: IProduct[] = [
         "category": "women",
         "image": womenImg,
         "rating": {
-            "rate": 3.6,
-            "count": 145
+            "rate": 4.5,
+            "count": 346
         }
     },
     {
@@ -274,8 +274,8 @@ let data: IProduct[] = [
         "category": "women",
         "image": womenImg1,
         "rating": {
-            "rate": 3.6,
-            "count": 145
+            "rate": 4.5,
+            "count": 320
         }
     },
     {
@@ -286,7 +286,7 @@ let data: IProduct[] = [
         "category": "women",
         "image": womenImg2,
         "rating": {
-            "rate": 3.6,
+            "rate": 2.7,
             "count": 145
         }
     },
@@ -298,8 +298,8 @@ let data: IProduct[] = [
         "category": "women",
         "image": womenImg3,
         "rating": {
-            "rate": 3.6,
-            "count": 145
+            "rate": 3.9,
+            "count": 244
         }
     },
     {
@@ -311,7 +311,7 @@ let data: IProduct[] = [
         "image": womenImg4,
         "rating": {
             "rate": 3.6,
-            "count": 145
+            "count": 276
         }
     },
     {
@@ -322,8 +322,8 @@ let data: IProduct[] = [
         "category": "women",
         "image": womenImg5,
         "rating": {
-            "rate": 3.6,
-            "count": 145
+            "rate": 4.3,
+            "count": 311
         }
     },
     {
@@ -334,8 +334,8 @@ let data: IProduct[] = [
         "category": "women",
         "image": womenImg6,
         "rating": {
-            "rate": 3.6,
-            "count": 145
+            "rate": 3.7,
+            "count": 376
         }
     },
     {
@@ -346,8 +346,8 @@ let data: IProduct[] = [
         "category": "women",
         "image": womenImg2,
         "rating": {
-            "rate": 3.6,
-            "count": 145
+            "rate": 2.9,
+            "count": 179
         }
     }, {
         "id": 29,
@@ -357,8 +357,8 @@ let data: IProduct[] = [
         "category": "women",
         "image": womenImg1,
         "rating": {
-            "rate": 3.6,
-            "count": 145
+            "rate": 1.4,
+            "count": 136
         }
     },
     {
@@ -369,8 +369,8 @@ let data: IProduct[] = [
         "category": "women",
         "image": womenImg,
         "rating": {
-            "rate": 3.6,
-            "count": 145
+            "rate": 5.0,
+            "count": 519
         }
     },
     {
@@ -381,7 +381,7 @@ let data: IProduct[] = [
         "category": "man",
         "image": menImg2,
         "rating": {
-            "rate": 2.1,
+            "rate": 4.5,
             "count": 430
         }
     },
@@ -393,8 +393,8 @@ let data: IProduct[] = [
         "category": "man",
         "image": menImg6,
         "rating": {
-            "rate": 2.1,
-            "count": 430
+            "rate": 4.1,
+            "count": 370
         }
     }
     ,
@@ -406,8 +406,8 @@ let data: IProduct[] = [
         "category": "man",
         "image": menImg5,
         "rating": {
-            "rate": 2.1,
-            "count": 430
+            "rate": 3.3,
+            "count": 287
         }
     }
     ,
@@ -419,8 +419,8 @@ let data: IProduct[] = [
         "category": "man",
         "image": menImg4,
         "rating": {
-            "rate": 2.1,
-            "count": 430
+            "rate": 3.7,
+            "count": 329
         }
     }
     ,
@@ -432,8 +432,8 @@ let data: IProduct[] = [
         "category": "man",
         "image": menImg3,
         "rating": {
-            "rate": 2.1,
-            "count": 430
+            "rate": 4.9,
+            "count": 496
         }
     }
     ,
@@ -446,7 +446,7 @@ let data: IProduct[] = [
         "image": menImg2,
         "rating": {
             "rate": 2.1,
-            "count": 430
+            "count": 143
         }
     }
     ,
@@ -458,8 +458,8 @@ let data: IProduct[] = [
         "category": "man",
         "image": menImg1,
         "rating": {
-            "rate": 2.1,
-            "count": 430
+            "rate": 3.5,
+            "count": 356
         }
     }
     ,
@@ -471,7 +471,7 @@ let data: IProduct[] = [
         "category": "man",
         "image": menImg,
         "rating": {
-            "rate": 2.1,
+            "rate": 4.5,
             "count": 430
         }
     }
