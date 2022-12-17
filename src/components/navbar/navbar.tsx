@@ -58,7 +58,10 @@ function Navbar({setCart}: boolean | any) {
                             <i className="fa-light fa-magnifying-glass"></i>
                             <input type="search" placeholder="search..." className='search-input'/>
                             <i className="fa-light fa-earth-asia"></i>
-                            <li className="cart-icon" onClick={setCart}>
+                            <li className="cart-icon" onClick={(e) => {
+                                setCart(true)
+                                e.stopPropagation()
+                            }}>
                                 <i className="fa-regular fa-bag-shopping"></i>
                                 <span className="total-product">{totalProduct.length}</span>
                             </li>

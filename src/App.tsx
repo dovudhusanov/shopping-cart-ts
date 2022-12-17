@@ -12,15 +12,20 @@ import Jewelery from "./pages/jewelery/jewelery";
 import Contact from "./pages/contact/contact";
 import ProductPage from "./pages/productPage/productPage";
 import CartModal from "./pages/cart/cartModal/cartModal";
+import Cart from "./pages/cart/cart/cart";
 
 function App() {
 
     const [cart, setCart] = useState<boolean>(false)
 
+    window.addEventListener("click", () => {
+        setCart(false)
+    })
+
     return (
         <>
-            <Navbar  setCart={() => setCart(true)}/>
-            <CartModal setCart={() => setCart(false)} className={cart ? "cart-modal active" : "cart-modal"}/>
+            <Navbar  setCart={setCart}/>
+            <CartModal setCart={setCart} className={cart ? "cart-modal active" : "cart-modal"}/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/about" element={<About/>}/>
@@ -30,6 +35,7 @@ function App() {
                 <Route path="/jewelery-product" element={<Jewelery/>}/>
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/product/:category/:productId" element={<ProductPage/>}/>
+                <Route path="/cart" element={<Cart/>}/>
                 <Route path="/*" element={<PageNotFound/>}/>
             </Routes>
             <Footer/>

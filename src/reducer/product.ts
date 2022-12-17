@@ -14,6 +14,7 @@ export const ProductReducer = (state: IProduct | any = [], action: action) => {
                 state[findProduct].quantity++
                 return state
             }
+            localStorage.setItem("product", JSON.stringify([...state, action.payload]))
             return [
                 ...state,
                 action.payload
@@ -21,7 +22,7 @@ export const ProductReducer = (state: IProduct | any = [], action: action) => {
             break;
         case TODO.DELETE_PRODUCT:
             // @ts-ignore
-            return state.product.filter(product => product.id !== action.payload.id);
+            return state?.filter((product) => product.id !== action.payload.id);
             break;
         default:
             return state

@@ -17,3 +17,35 @@
     padding: 0 15px;
 }
 
+
+::-webkit-scrollbar-track {
+    background-color: #E6E6E6;
+}
+
+::-webkit-scrollbar {
+    width: 11px;
+    background-color: #E6E6E6;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #8D8B8B;
+}
+
+.btn-primary{
+    font-size: 13px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: #121212;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    border: none;
+    margin: 0 10px;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover{
+    cursor: pointer;
+    background-color: #E6E6E6;
+    color: #121212;
+}
