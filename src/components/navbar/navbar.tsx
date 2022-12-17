@@ -2,6 +2,7 @@ import React, {useRef} from 'react';
 import "./navbar.css"
 import {NavLink, Link} from "react-router-dom";
 import {useSelector} from "react-redux";
+import logo from "../../images/MiSto.png"
 
 function Navbar({setCart}: boolean | any) {
 
@@ -44,9 +45,9 @@ function Navbar({setCart}: boolean | any) {
             <div className="main-navbar" >
                 <div className="container">
                     <div className="navbar">
-                        <Link to="/"><img src="./images/MiSto.png" alt="logo" className="logo"/></Link>
+                        <Link to="/"><img src={logo} alt="logo" className="logo"/></Link>
                         <ul className="nav-list" ref={navRef}>
-                            <Link to="/" onClick={navClose}><img src="./images/MiSto.png" alt="logo" className="logo logo-m"/></Link>
+                            <Link to="/" onClick={navClose}><img src={logo} alt="logo" className="logo logo-m"/></Link>
                             <li><NavLink to="/about" onClick={navClose}>About Us</NavLink></li>
                             <li><NavLink to="/women-product" onClick={navClose}>Women</NavLink></li>
                             <li><NavLink to="/men-product" onClick={navClose}>Men</NavLink></li>

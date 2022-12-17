@@ -1,6 +1,13 @@
 import React from 'react';
 import "./footer.css"
 import {Link} from "react-router-dom";
+import img from "../../images/footerImages/img.png"
+import img1 from "../../images/footerImages/img_1.png"
+import img2 from "../../images/footerImages/img_2.png"
+import img3 from "../../images/footerImages/img_3.png"
+import img4 from "../../images/footerImages/img_4.png"
+import img5 from "../../images/footerImages/img_5.png"
+import img6 from "../../images/footerImages/img_6.png"
 
 function Footer() {
     return (
@@ -59,13 +66,13 @@ function Footer() {
                    <div className='footer-copyright'>
                        <span className="copyright">Copyright &#169; {(new Date().getFullYear())}</span>
                        <ul className="payment-method">
-                           <img src="./images/footerImages/img.png" alt="footer img"/>
-                           <img src="./images/footerImages/img_1.png" alt="footer img"/>
-                           <img src="./images/footerImages/img_2.png" alt="footer img"/>
-                           <img src="./images/footerImages/img_3.png" alt="footer img"/>
-                           <img src="./images/footerImages/img_4.png" alt="footer img"/>
-                           <img src="./images/footerImages/img_5.png" alt="footer img"/>
-                           <img src="./images/footerImages/img_6.png" alt="footer img"/>
+                           <img src={img} alt="footer img"/>
+                           <img src={img1} alt="footer img"/>
+                           <img src={img2} alt="footer img"/>
+                           <img src={img3} alt="footer img"/>
+                           <img src={img4} alt="footer img"/>
+                           <img src={img5} alt="footer img"/>
+                           <img src={img6} alt="footer img"/>
                        </ul>
                        <div className="author-copyright">
                            <span className="author">
