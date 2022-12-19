@@ -7,6 +7,7 @@ import {ScrollTop} from "../../../middleware/scrollTop";
 import PageTitle from "../../../components/productPageTitle/productPageTitle";
 import {deleteProductFromCart} from "../../../action/productOnCart";
 import {Link} from "react-router-dom";
+import {totalPriceBuilder} from "../../../reducer/product";
 
 function Cart() {
 
@@ -17,15 +18,6 @@ function Cart() {
 
     // @ts-ignore
     const product = useSelector(state => state.product)
-    const [quantityChange, setQuantityChange] = useState(1)
-
-    function quantityDec() {
-        if (quantityChange === 1) {
-            return quantityChange
-        } else {
-            setQuantityChange(quantityChange - 1)
-        }
-    }
 
     function deleteProduct(id: number) {
         // @ts-ignore
@@ -62,6 +54,7 @@ function Cart() {
                                                 <h2>{product.title}</h2>
                                                 <span>color: <span>{product.color}</span></span>
                                                 <span>size: <span>{product.size}</span></span>
+                                                <span>price: ${product.price}</span>
                                                 <div className="selected-product-rating">
                                                     <span
                                                         className="selected-product-rating-rate">{product.rating.rate}</span>
@@ -79,11 +72,9 @@ function Cart() {
                                         </div>
                                         <div className="selected-product-price-and-delete">
                                             <div className="quantity-add">
-                                                <button onClick={() => quantityDec()}>-</button>
-                                                <span>{quantityChange}</span>
-                                                <button
-                                                    onClick={() => setQuantityChange(quantityChange + 1)}>+
-                                                </button>
+                                                <button>-</button>
+                                                <span>1</span>
+                                                <button>+</button>
                                             </div>
                                             <span>Price: ${product.price}</span>
                                             <button className="btn-primary delete-btn"
@@ -94,7 +85,7 @@ function Cart() {
                                 ))}
                             </div>
                             <div className="checkout-order">
-                                <h1>Total Price: $</h1>
+                                <h1>Total Price: $ {totalPriceBuilder(product)}</h1>
                                 <button className="btn-primary">Checkout Order</button>
                             </div>
                         </div>

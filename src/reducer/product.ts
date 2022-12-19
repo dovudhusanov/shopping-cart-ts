@@ -5,7 +5,9 @@ interface action {
     type: string
     payload: object
 }
+
 export const ProductReducer = (state: IProduct | any = [], action: action) => {
+
     switch (action.type) {
         case TODO.ADD_TO_CART:
             // @ts-ignore
@@ -14,7 +16,6 @@ export const ProductReducer = (state: IProduct | any = [], action: action) => {
                 state[findProduct].quantity++
                 return state
             }
-            localStorage.setItem("product", JSON.stringify([...state, action.payload]))
             return [
                 ...state,
                 action.payload
@@ -22,9 +23,19 @@ export const ProductReducer = (state: IProduct | any = [], action: action) => {
             break;
         case TODO.DELETE_PRODUCT:
             // @ts-ignore
+            const removeProductIdx = state?.findIndex((product: IProduct) => product.id == action.payload)
+            if (removeProductIdx >= 0) {
+                state[removeProductIdx].quantity--
+                return state
+            }
+
+            // @ts-ignore
             return state?.filter((product) => product.id !== action.payload.id);
             break;
         default:
             return state
     }
 }
+
+export const totalPriceBuilder = (state: IProduct[]) =>
+    state.reduce((total: number, amount: IProduct| any) => total + amount.price * amount.quantity, 0)

@@ -3,7 +3,8 @@ import "./cartModal.css"
 import {useDispatch, useSelector} from "react-redux";
 import {IProduct} from "../../../data/data";
 import {Link} from 'react-router-dom';
-import {deleteProductFromCart} from "../../../action/productOnCart";
+import {addToCart, deleteProductFromCart} from "../../../action/productOnCart";
+import {totalPriceBuilder} from "../../../reducer/product";
 
 interface cart {
     setCart: boolean | any
@@ -13,20 +14,14 @@ interface cart {
 function CartModal({setCart, className}: cart) {
 
     const dispatch = useDispatch()
-
     // @ts-ignore
     const product = useSelector(state => state.product)
     console.log(product)
 
-    const [quantityChange, setQuantityChange] = useState(1)
-
-    function quantityDec() {
-        if (quantityChange === 1) {
-            return quantityChange
-        } else {
-            setQuantityChange(quantityChange - 1)
-        }
-    }
+    const numberFormatter = new Intl.NumberFormat(undefined,{
+        style: 'currency',
+        currency: 'USD'
+    })
 
     function deleteProduct(id: number) {
         // @ts-ignore
@@ -53,26 +48,19 @@ function CartModal({setCart, className}: cart) {
                         </div>
                     ) : (
                         <>
-                            {product.map((product: IProduct) => (
+                            {product.map((product: IProduct, index: number) => (
                                 <div className="cart-product">
                                     <img src={product.image} alt=""/>
                                     <div className="cart-product-info">
                                         <span className="title">{product.title}</span>
                                         <span className="title">$ {product.price}</span>
-                                        <div className="quantity-add">
-                                            <button onClick={() => quantityDec()}>-</button>
-                                            <span>{quantityChange}</span>
-                                            <button
-                                                onClick={() => setQuantityChange(quantityChange + 1)}>+
-                                            </button>
-                                        </div>
                                         <button className="btn-primary delete-btn" onClick={() => deleteProduct(product.id)}>delete</button>
                                     </div>
                                 </div>
                             ))}
                             <div className="total-price">
                                 <span>Total price: </span>
-                                <pre> $ {product.price}</pre>
+                                <pre> {numberFormatter.format(totalPriceBuilder(product))}</pre>
                                 <Link to="/cart" className="btn-primary" onClick={() => setCart(false)}>Go To Cart</Link>
                             </div>
                         </>

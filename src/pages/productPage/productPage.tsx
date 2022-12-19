@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import "./productPage.css"
 import {useParams} from "react-router-dom";
 import {color, IProduct, sizes, sortedData} from "../../data/data";
@@ -12,17 +12,26 @@ import img5 from "../../images/imagesBuy/productBuyCard/img_4.png"
 import img6 from "../../images/imagesBuy/productBuyCard/img_5.png"
 import img7 from "../../images/imagesBuy/productBuyCard/img_6.png"
 import {useDispatch, useSelector} from "react-redux";
-import {addToCart} from "../../action/productOnCart";
+import {addToCart, deleteProductFromCart} from "../../action/productOnCart";
+import {TODO} from "../../constants/addToCart";
 
 function ProductPage() {
 
     ScrollTop()
-    const {productId} = useParams()
+    const {productId} = useParams();
+
+    const [isBuy, setIsBuy] = useState(false)
     // @ts-ignore
     const product = useSelector(state => state.products.products.filter(id => id.id == productId))
+    // @ts-ignore
+    const paidProduct = useSelector(state => state.product.filter((pro: IProduct) => pro.id == productId)) || null
     const dispatch = useDispatch()
     const handleAdd = (productItem: IProduct) => {
         dispatch(addToCart(productItem))
+    }
+
+    const handleDelete = (product: IProduct) => {
+        dispatch(deleteProductFromCart(product.id))
     }
     const [saveProduct, setSaveProduct] = useState<boolean>(false)
     return (
@@ -65,7 +74,31 @@ function ProductPage() {
                                 <div className="product-buy">
                                     <div>
                                         <span>$ {product.price}</span>
-                                        <button className="btn-primary" onClick={() => handleAdd(product)}>Add To Card</button>
+                                        {paidProduct[index]?.quantity >= 1 ? (
+                                                <div className="quantity-add">
+                                                    <button onClick={() => {
+                                                        setIsBuy(false)
+                                                        handleDelete(product)
+                                                    }}>-
+                                                    </button>
+                                                    <span>{paidProduct[index]?.quantity}</span>
+                                                    <button
+                                                        onClick={() => {
+                                                            setIsBuy(prev => !prev)
+                                                            handleAdd(product)
+                                                        }}>+
+                                                    </button>
+                                                </div>
+                                            )
+                                            : (
+                                                <button className="btn-primary" onClick={() => {
+                                                    setIsBuy(prev => !prev)
+                                                    handleAdd(product)
+                                                }}>
+                                                    Add To Card
+                                                </button>
+                                            )
+                                        }
                                         <button className="save-product"
                                                 onClick={() => setSaveProduct(prevState => !prevState)}>
                                             {saveProduct ? <i className="fa-solid fa-heart"></i> :
@@ -99,7 +132,7 @@ function ProductPage() {
                                     <span>Color: {color.slice(0, 4).map(color => (
                                         <span>{color} </span>
                                     ))}</span>
-                                    <span>Size: {sizes.map((size,index) => (
+                                    <span>Size: {sizes.map((size, index) => (
                                         <span key={index + 1}>{size} </span>
                                     ))}</span>
                                     <span>Material: <span>100% Polyester</span></span>
