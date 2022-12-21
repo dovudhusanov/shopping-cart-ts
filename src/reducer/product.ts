@@ -25,7 +25,9 @@ export const ProductReducer = (state: IProduct | any = [], action: action) => {
             // @ts-ignore
             const removeProductIdx = state?.findIndex((product: IProduct) => product.id == action.payload)
             if (removeProductIdx >= 0) {
-                state[removeProductIdx].quantity--
+                if(state[removeProductIdx].quantity !== 1) {
+                    state[removeProductIdx].quantity--
+                }
                 return state
             }
 
@@ -38,4 +40,4 @@ export const ProductReducer = (state: IProduct | any = [], action: action) => {
 }
 
 export const totalPriceBuilder = (state: IProduct[]) =>
-    state.reduce((total: number, amount: IProduct| any) => total + amount.price * amount.quantity, 0)
+    state.reduce((total: number, amount: IProduct | any) => total + amount.price * amount.quantity.toFixed(2), 0)

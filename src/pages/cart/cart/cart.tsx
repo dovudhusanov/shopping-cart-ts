@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import "./cart.css"
 import {useDispatch, useSelector} from "react-redux";
 import {IProduct} from "../../../data/data";
 import changeTitle from "../../../middleware/changeTitle";
 import {ScrollTop} from "../../../middleware/scrollTop";
 import PageTitle from "../../../components/productPageTitle/productPageTitle";
-import {deleteProductFromCart} from "../../../action/productOnCart";
+import {addToCart, deleteProductFromCart} from "../../../action/productOnCart";
 import {Link} from "react-router-dom";
 import {totalPriceBuilder} from "../../../reducer/product";
 
@@ -16,6 +16,7 @@ function Cart() {
 
     const dispatch = useDispatch()
 
+    const [isBuy, setIsBuy] = useState(false)
     // @ts-ignore
     const product = useSelector(state => state.product)
 
@@ -29,6 +30,16 @@ function Cart() {
             dispatch(deleteProductFromCart({id}))
         }
     }
+
+    // @ts-ignore
+    const handleAdd = useCallback((productItem: IProduct) => {
+        dispatch(addToCart(productItem))
+    }, [])
+
+    // @ts-ignore
+    const handleDelete = useCallback((product: IProduct) => {
+        dispatch(deleteProductFromCart(product.id))
+    }, [])
 
     return (
         <div style={{marginTop: 90}} className="cart">
@@ -46,7 +57,7 @@ function Cart() {
                         <h3>{product.length} selected products</h3>
                         <div className="cart-items">
                             <div className="selected-products">
-                                {product.map((product: IProduct) => (
+                                {product.map((product: IProduct, index: number) => (
                                     <div className="selected-product" key={product.id}>
                                         <div className="selected-product-detail">
                                             <img src={product.image} alt={product.title}/>
@@ -72,9 +83,18 @@ function Cart() {
                                         </div>
                                         <div className="selected-product-price-and-delete">
                                             <div className="quantity-add">
-                                                <button>-</button>
-                                                <span>1</span>
-                                                <button>+</button>
+                                                <button onClick={() => {
+                                                    setIsBuy(false)
+                                                    handleDelete(product)
+                                                }}>-
+                                                </button>
+                                                <span>{product?.quantity}</span>
+                                                <button
+                                                    onClick={() => {
+                                                        setIsBuy(prev => !prev)
+                                                        handleAdd(product)
+                                                    }}>+
+                                                </button>
                                             </div>
                                             <span>Price: ${product.price}</span>
                                             <button className="btn-primary delete-btn"
