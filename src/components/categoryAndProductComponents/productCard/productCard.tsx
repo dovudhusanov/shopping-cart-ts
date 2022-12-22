@@ -75,7 +75,7 @@ function ProductCard({title, category, product, singleProduct}: IProps) {
                             </div>
                             <div className="button-to-view">
                                 <Link to={`/product/${product.category}/${product.id}`}>View</Link>
-                                <button>Add To Cart</button>
+                                <button >Add To Cart</button>
                             </div>
                         </div>
                     ))}

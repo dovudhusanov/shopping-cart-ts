@@ -1,5 +1,11 @@
 import {TODO} from "../constants/addToCart"
 
+export const uploadProduct = () => {
+    return {
+        type: TODO.UPLOAD_PRODUCT
+    }
+}
+
 export const addToCart = (product: any) => {
     return {
         type: TODO.ADD_TO_CART,

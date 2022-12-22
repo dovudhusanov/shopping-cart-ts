@@ -15,10 +15,14 @@ function Cart() {
     ScrollTop()
 
     const dispatch = useDispatch()
+    const numberFormatter = new Intl.NumberFormat(undefined,{
+        style: 'currency',
+        currency: 'USD'
+    })
 
     const [isBuy, setIsBuy] = useState(false)
     // @ts-ignore
-    const product = useSelector(state => state.product)
+    const productData = useSelector(state => state.product)
 
     function deleteProduct(id: number) {
         // @ts-ignore
@@ -45,7 +49,7 @@ function Cart() {
         <div style={{marginTop: 90}} className="cart">
             <PageTitle title="Cart" locationTitle="cart" locationTitle2=""/>
             <div style={{marginTop: 50}} className="container">
-                {Object.keys(product).length === 0 ? (
+                {Object.keys(productData).length === 0 ? (
                     <div className="empty-basket">
                         <i className="fa-regular fa-cart-shopping"></i>
                         <span>Your basket is empty</span>
@@ -54,10 +58,10 @@ function Cart() {
                     </div>
                 ) : (
                     <>
-                        <h3>{product.length} selected products</h3>
+                        <h3>{productData.length} selected products</h3>
                         <div className="cart-items">
                             <div className="selected-products">
-                                {product.map((product: IProduct, index: number) => (
+                                {productData.map((product: IProduct, index: number) => (
                                     <div className="selected-product" key={product.id}>
                                         <div className="selected-product-detail">
                                             <img src={product.image} alt={product.title}/>
@@ -96,7 +100,7 @@ function Cart() {
                                                     }}>+
                                                 </button>
                                             </div>
-                                            <span>Price: ${product.price}</span>
+                                            <span>Price: {product.quantity && numberFormatter.format(product.price * product.quantity)}</span>
                                             <button className="btn-primary delete-btn"
                                                     onClick={() => deleteProduct(product.id)}>delete
                                             </button>
@@ -105,7 +109,7 @@ function Cart() {
                                 ))}
                             </div>
                             <div className="checkout-order">
-                                <h1>Total Price: $ {totalPriceBuilder(product)}</h1>
+                                <h1>Total Price:  {numberFormatter.format(totalPriceBuilder(productData))}</h1>
                                 <button className="btn-primary">Checkout Order</button>
                             </div>
                         </div>

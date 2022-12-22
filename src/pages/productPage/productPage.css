@@ -125,6 +125,10 @@
     color: #121212;
 }
 
+.product-buy .quantity-add{
+    margin: 0 20px;
+}
+
 .product-buy .add-btn{
     font-size: 13px;
     font-weight: 500;

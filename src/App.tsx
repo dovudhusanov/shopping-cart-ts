@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import {useDispatch} from "react-redux";
 import {Route, Routes} from "react-router-dom";
 import Home from "./pages/home/home";
 import About from "./pages/about/about";
@@ -13,18 +14,24 @@ import Contact from "./pages/contact/contact";
 import ProductPage from "./pages/productPage/productPage";
 import CartModal from "./pages/cart/cartModal/cartModal";
 import Cart from "./pages/cart/cart/cart";
+import {TODO} from "./constants/addToCart";
+import {uploadProduct} from "./action/productOnCart";
 
 function App() {
 
     const [cart, setCart] = useState<boolean>(false)
-
+    const dispatch = useDispatch();
     window.addEventListener("click", () => {
         setCart(false)
     })
 
+    useEffect(() => {
+        dispatch(uploadProduct())
+    }, [])
+
     return (
         <>
-            <Navbar  setCart={setCart}/>
+            <Navbar setCart={setCart}/>
             <CartModal setCart={setCart} className={cart ? "cart-modal active" : "cart-modal"}/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
